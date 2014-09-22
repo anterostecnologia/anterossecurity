@@ -8,6 +8,8 @@ import br.com.anteros.persistence.metadata.annotation.Entity;
 import br.com.anteros.persistence.metadata.annotation.Fetch;
 import br.com.anteros.persistence.metadata.annotation.GeneratedValue;
 import br.com.anteros.persistence.metadata.annotation.Id;
+import br.com.anteros.persistence.metadata.annotation.Index;
+import br.com.anteros.persistence.metadata.annotation.Indexes;
 import br.com.anteros.persistence.metadata.annotation.SequenceGenerator;
 import br.com.anteros.persistence.metadata.annotation.Table;
 import br.com.anteros.persistence.metadata.annotation.type.FetchMode;
@@ -21,6 +23,8 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  */
 @Entity
 @Table(name = "SEGURANCASISTEMA")
+@Indexes(value = {
+		@Index(name = "UK_SEGURANCASISTEMA_NOME_SISTEMA", columnNames = { "NOME_SISTEMA"}, unique = true) })
 public class System implements Serializable {
 
 	/*

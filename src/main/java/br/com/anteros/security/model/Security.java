@@ -3,7 +3,6 @@ package br.com.anteros.security.model;
 import java.io.Serializable;
 import java.util.Set;
 
-import br.com.anteros.persistence.metadata.annotation.BooleanValue;
 import br.com.anteros.persistence.metadata.annotation.Cascade;
 import br.com.anteros.persistence.metadata.annotation.Column;
 import br.com.anteros.persistence.metadata.annotation.DiscriminatorColumn;
@@ -16,7 +15,6 @@ import br.com.anteros.persistence.metadata.annotation.JoinColumn;
 import br.com.anteros.persistence.metadata.annotation.JoinTable;
 import br.com.anteros.persistence.metadata.annotation.SequenceGenerator;
 import br.com.anteros.persistence.metadata.annotation.Table;
-import br.com.anteros.persistence.metadata.annotation.type.BooleanType;
 import br.com.anteros.persistence.metadata.annotation.type.CascadeType;
 import br.com.anteros.persistence.metadata.annotation.type.FetchMode;
 import br.com.anteros.persistence.metadata.annotation.type.FetchType;
@@ -35,6 +33,8 @@ import br.com.anteros.persistence.metadata.annotation.type.InheritanceType;
 @DiscriminatorColumn(name = "TP_SEGURANCA", length = 40)
 public abstract class Security implements Serializable {
 
+	
+	public static final String SECURITY_PACKAGE = "br.com.anteros.security.model";
 	/*
 	 * Identificação do Objeto de Segurança
 	 */

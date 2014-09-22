@@ -34,7 +34,7 @@ public class User extends Security {
 	/*
 	 * Senha do usuário
 	 */
-	@Column(name = "SENHA", length = 20)
+	@Column(name = "SENHA", length = 100)
 	private String senha;
 
 	/*

@@ -10,6 +10,8 @@ import br.com.anteros.persistence.metadata.annotation.Fetch;
 import br.com.anteros.persistence.metadata.annotation.ForeignKey;
 import br.com.anteros.persistence.metadata.annotation.GeneratedValue;
 import br.com.anteros.persistence.metadata.annotation.Id;
+import br.com.anteros.persistence.metadata.annotation.Index;
+import br.com.anteros.persistence.metadata.annotation.Indexes;
 import br.com.anteros.persistence.metadata.annotation.SequenceGenerator;
 import br.com.anteros.persistence.metadata.annotation.Table;
 import br.com.anteros.persistence.metadata.annotation.type.CascadeType;
@@ -27,6 +29,8 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  */
 @Entity
 @Table(name = "SEGURANCARECURSO")
+@Indexes(value = {
+		@Index(name = "UK_SEGURANCARECURSO_NOME_RECURSO", columnNames = { "ID_SISTEMA, NOME_RECURSO"}, unique = true) })
 public class Resource implements Serializable {
 
 	/*
@@ -51,7 +55,7 @@ public class Resource implements Serializable {
 	private String descricao;
 
 	/*
-	 * Lista de Açõees que serão controladas acesso para um Recurso.
+	 * Lista de Ações que serão controladas acesso para um Recurso.
 	 */
 	@Fetch(type = FetchType.LAZY, mode = FetchMode.ONE_TO_MANY, mappedBy = "recurso")
 	@Cascade(values = CascadeType.DELETE_ORPHAN)
