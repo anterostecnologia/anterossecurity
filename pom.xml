@@ -4,6 +4,12 @@
 	<groupId>br.com.anteros</groupId>
 	<artifactId>Anteros-Security</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<java.versao>1.6</java.versao>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>br.com.anteros</groupId>
@@ -11,7 +17,7 @@
 			<version>0.0.5-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-	
+
 	<!-- DECLARAÇÃO DE REPOSITÓRIO PARA BAIXAR AS BIBLIOTECAS DO ANTEROS NO 
 		10.0.0.33 -->
 	<repositories>
