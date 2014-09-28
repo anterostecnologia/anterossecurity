@@ -50,16 +50,16 @@ public class AccessTimeInterval implements Serializable {
 	/*
 	 * Hora Inicial
 	 */
-	@Temporal(type = TemporalType.DATE_TIME)
-	@Column(name = "HORA_INICIAL", required = true)
-	private Date horaInicial;
+	//@Temporal(type = TemporalType.DATE_TIME)
+	@Column(name = "HORA_INICIAL", required = true, length=4)
+	private String horaInicial;
 
 	/*
 	 * Hora Final
 	 */
-	@Temporal(type = TemporalType.DATE_TIME)
-	@Column(name = "HORA_FINAL", required = true)
-	private Date horaFinal;
+	//@Temporal(type = TemporalType.DATE_TIME)
+	@Column(name = "HORA_FINAL", required = true, length=4)
+	private String horaFinal;
 
 	public Long getId() {
 		return id;
@@ -77,28 +77,29 @@ public class AccessTimeInterval implements Serializable {
 		this.diaDaSemana = diaDaSemana;
 	}
 
-	public Date getHoraInicial() {
-		return horaInicial;
-	}
-
-	public void setHoraInicial(Date horaInicial) {
-		this.horaInicial = horaInicial;
-	}
-
-	public Date getHoraFinal() {
-		return horaFinal;
-	}
-
-	public void setHoraFinal(Date horaFinal) {
-		this.horaFinal = horaFinal;
-	}
-
+	
 	public AccessTime getHorarioAcesso() {
 		return horarioAcesso;
 	}
 
 	public void setHorarioAcesso(AccessTime horarioAcesso) {
 		this.horarioAcesso = horarioAcesso;
+	}
+
+	public String getHoraInicial() {
+		return horaInicial;
+	}
+
+	public void setHoraInicial(String horaInicial) {
+		this.horaInicial = horaInicial;
+	}
+
+	public String getHoraFinal() {
+		return horaFinal;
+	}
+
+	public void setHoraFinal(String horaFinal) {
+		this.horaFinal = horaFinal;
 	}
 
 }

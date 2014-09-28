@@ -8,6 +8,7 @@ import br.com.anteros.persistence.metadata.annotation.ForeignKey;
 import br.com.anteros.persistence.metadata.annotation.GeneratedValue;
 import br.com.anteros.persistence.metadata.annotation.Id;
 import br.com.anteros.persistence.metadata.annotation.SequenceGenerator;
+import br.com.anteros.persistence.metadata.annotation.Table;
 import br.com.anteros.persistence.metadata.annotation.type.FetchType;
 import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
 
@@ -18,9 +19,10 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  * determinado horário de acesso
  */
 
-@Entity(name="SEGURANCAACESSO")
+@Entity
+@Table(name = "SEGURANCAACESSO")
 public class SecurityAccess implements Serializable {
-	
+
 	/*
 	 * Identificador do segurança horário de acesso
 	 */
@@ -29,36 +31,33 @@ public class SecurityAccess implements Serializable {
 	@GeneratedValue(strategy = GeneratedType.AUTO)
 	@SequenceGenerator(sequenceName = "SEQ_ACESSO", initialValue = 1)
 	private Long id;
-	
-	
-	
+
 	/*
 	 * Identificador do horário de acesso
 	 */
-	@ForeignKey(type=FetchType.EAGER)
-	@Column(name="ID_HORARIO", required=true)
+	@ForeignKey(type = FetchType.EAGER)
+	@Column(name = "ID_HORARIO", required = true)
 	private AccessTime horarioAcesso;
-	
+
 	/*
 	 * Identificador do segurança
 	 */
-	@ForeignKey(type=FetchType.EAGER)
-	@Column(name="ID_SEGURANCA", required=true)
+	@ForeignKey(type = FetchType.EAGER)
+	@Column(name = "ID_SEGURANCA", required = true)
 	private Security seguranca;
-	
-	
+
 	/*
 	 * Terminal de acesso
 	 */
-	@ForeignKey(type=FetchType.EAGER)
-	@Column(name="ID_TERMINAL", required=true)
+	@ForeignKey(type = FetchType.EAGER)
+	@Column(name = "ID_TERMINAL", required = true)
 	private Terminal terminal;
-	
+
 	/*
 	 * Identificador do sistema
 	 */
-	@ForeignKey(type=FetchType.EAGER)
-	@Column(name="ID_SISTEMA", required=true)
+	@ForeignKey(type = FetchType.EAGER)
+	@Column(name = "ID_SISTEMA", required = true)
 	private System sistema;
 
 	public Long getId() {
