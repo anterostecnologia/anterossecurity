@@ -10,6 +10,7 @@ import br.com.anteros.persistence.metadata.annotation.Fetch;
 import br.com.anteros.persistence.metadata.annotation.ForeignKey;
 import br.com.anteros.persistence.metadata.annotation.JoinColumn;
 import br.com.anteros.persistence.metadata.annotation.JoinTable;
+import br.com.anteros.persistence.metadata.annotation.Transient;
 import br.com.anteros.persistence.metadata.annotation.type.BooleanType;
 import br.com.anteros.persistence.metadata.annotation.type.FetchMode;
 import br.com.anteros.persistence.metadata.annotation.type.FetchType;
@@ -70,14 +71,14 @@ public class User extends Security {
 	 */
 	@BooleanValue(trueValue = "S", falseValue = "N", type=BooleanType.STRING)
 	@Column(name = "BO_CONTA_DESATIVADA", required = true, defaultValue = "'N'")
-	private Boolean contaDesativada;
+	private Boolean contaDesativada=Boolean.FALSE;
 
 	/*
 	 * Conta do usuário está bloqueada?
 	 */
 	@BooleanValue(trueValue = "S", falseValue = "N", type=BooleanType.STRING)
 	@Column(name = "BO_CONTA_BLOQUEADA", required = true, defaultValue = "'N'")
-	private Boolean contaBloqueada;
+	private Boolean contaBloqueada=Boolean.FALSE;
 	
 	
 	@BooleanValue(falseValue = "N", trueValue = "S", type=BooleanType.STRING)
@@ -197,10 +198,11 @@ public class User extends Security {
 		this.login = login;
 	}
 
+	@Transient
 	public boolean isExpirada() {
 		return (contaBloqueada || contaDesativada);
 	}
-
+	
 	public Boolean getBoHorarioLivre() {
 		return boHorarioLivre;
 	}
