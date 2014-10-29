@@ -56,7 +56,7 @@ public abstract class Security implements Serializable {
 	/*
 	 * Lista de Ações permitidas para um determinado objeto de Segurança.
 	 */
-	@Fetch(type = FetchType.LAZY, mode = FetchMode.MANY_TO_MANY)
+	@Fetch(type = FetchType.LAZY, mode = FetchMode.MANY_TO_MANY, statement="SELECT AC.*, REC.*, SIS.* FROM  SEGURANCAACAOACAO SACAO, SEGURANCAACAO AC, SEGURANCARECURSO REC, SEGURANCASISTEMA SIS WHERE SACAO.ID_SEGURANCA = :ID_SEGURANCA AND AC.ID_ACAO = SACAO.ID_ACAO AND REC.ID_RECURSO = AC.ID_RECURSO AND SIS.ID_SISTEMA = REC.ID_SISTEMA")
 	@JoinTable(name = "SEGURANCAACAOACAO", joinColumns = @JoinColumn(name = "ID_SEGURANCA"), inversedJoinColumns = @JoinColumn(name = "ID_ACAO"))
 	private Set<Action> acoes;
 
