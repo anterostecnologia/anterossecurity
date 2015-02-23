@@ -16,6 +16,12 @@
 			<artifactId>Anteros-Persistence</artifactId>
 			<version>LATEST</version>
 		</dependency>
+
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Persistence-Apt</artifactId>
+			<version>LATEST</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -50,13 +56,6 @@
 						</configuration>
 					</execution>
 				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>br.com.anteros</groupId>
-						<artifactId>Anteros-Persistence-Apt</artifactId>
-						<version>0.0.3-SNAPSHOT</version>
-					</dependency>
-				</dependencies>
 			</plugin>
 
 		</plugins>
