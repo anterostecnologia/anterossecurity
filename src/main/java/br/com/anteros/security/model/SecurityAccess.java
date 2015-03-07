@@ -33,7 +33,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  * Classe que representa os terminais e sistemas que um usuário pode acessar em um de
  * determinado horário de acesso
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 
 @Entity

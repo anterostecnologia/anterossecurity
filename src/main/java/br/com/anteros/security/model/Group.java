@@ -31,7 +31,7 @@ import br.com.anteros.persistence.metadata.annotation.type.FetchType;
  * Classe que representa um Grupo de Usuários no sistema. Possui uma lista de Ações as quais 
  * também serão atribuídas aos membros do Grupo.
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 
 @Entity

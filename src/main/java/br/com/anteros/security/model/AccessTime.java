@@ -36,7 +36,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  * 
  * Classe que representa Horário de Acesso que será permitido ao Usuário utilizar o sistema.
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 @Entity
 @Table(name = "SEGURANCAHORARIO")

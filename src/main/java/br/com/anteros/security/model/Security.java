@@ -42,7 +42,7 @@ import br.com.anteros.persistence.metadata.annotation.type.InheritanceType;
  * Classe abstrata que vai representar qualquer objeto que necessite de controle de acesso a determinados
  * Recursos/Ações dentro de um Sistema.
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 @Entity
 @Table(name = "SEGURANCA")

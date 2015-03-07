@@ -36,7 +36,7 @@ import br.com.anteros.persistence.metadata.annotation.type.FetchType;
  * Classe que representa um usuário dentro de um Sistema. Pode ser uma Pessoa ou até mesmo um usuário virtual como
  * o próprio Sistema.
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 
 @Entity

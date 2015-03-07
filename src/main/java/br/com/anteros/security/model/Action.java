@@ -34,7 +34,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  * 
  * Classe que representa Ação executada por um Usuário dentro de um sistema.
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 @Entity
 @Table(name = "SEGURANCAACAO")

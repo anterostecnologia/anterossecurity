@@ -25,7 +25,7 @@ import br.com.anteros.persistence.metadata.annotation.Entity;
  * Classe que representa um perfil de um Usuário dentro de um sistema. Ações poderão ser
  * atribuidas a um perfil e consequentemente estarão atribuídas aos usuários que possuírem o perfil.
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 
 @Entity

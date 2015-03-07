@@ -41,7 +41,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  * Ex: Formulário, relatório, etc. Terá uma lista de ações específicas que serão atribuídas posteriormente
  * a qualquer objeto que extenda Seguranca como um Papel, um Usuario ou um Grupo.
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 @Entity
 @Table(name = "SEGURANCARECURSO")

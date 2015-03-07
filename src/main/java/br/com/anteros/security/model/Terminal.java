@@ -30,7 +30,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  * 
  * Classe que representa o cadastro dos terminais de Acesso ex: computador, coletor etc
  * 
- * @author Edson Martins
+ * @author Edson Martins edsonmartins2005@gmail.com
  */
 
 @Entity
