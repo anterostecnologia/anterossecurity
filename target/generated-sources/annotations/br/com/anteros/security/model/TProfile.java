@@ -36,6 +36,8 @@ public class TProfile extends EntityPathBase<Profile> {
     //inherited
     public final NumberPath<Long> id = _super.id;
 
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_PK_SEGURANCA;
+
     //inherited
     public final StringPath nome = _super.nome;
 
@@ -44,14 +46,17 @@ public class TProfile extends EntityPathBase<Profile> {
 
     public TProfile(String variable) {
         super(Profile.class, forVariable(variable));
+        this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
     }
 
     public TProfile(Path<? extends Profile> path) {
         super(path.getType(), path.getMetadata());
+        this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
     }
 
     public TProfile(PathMetadata<?> metadata) {
         super(Profile.class, metadata);
+        this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
     }
 
 }

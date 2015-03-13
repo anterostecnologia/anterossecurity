@@ -53,6 +53,14 @@ public class TUser extends EntityPathBase<User> {
     //inherited
     public final NumberPath<Long> id = _super.id;
 
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_IX_SEGURANCA_ID_HORARIO;
+
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_PK_SEGURANCA;
+
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_SEGURANCA_PERFIL;
+
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_UK_SEGURANCA_LOGIN;
+
     public final StringPath login = createString("login");
 
     //inherited
@@ -91,6 +99,10 @@ public class TUser extends EntityPathBase<User> {
         super(type, metadata, inits);
         this.horarioAcesso = inits.isInitialized("horarioAcesso") ? new TAccessTime(forProperty("horarioAcesso")) : null;
         this.perfil = inits.isInitialized("perfil") ? new TProfile(forProperty("perfil")) : null;
+        this.idx_IX_SEGURANCA_ID_HORARIO = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"IX_SEGURANCA_ID_HORARIO");
+        this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
+        this.idx_SEGURANCA_PERFIL = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"SEGURANCA_PERFIL");
+        this.idx_UK_SEGURANCA_LOGIN = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCA_LOGIN");
     }
 
 }

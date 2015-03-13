@@ -28,6 +28,8 @@ public class TResource extends EntityPathBase<Resource> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_UK_SEGURANCARECURSO_NOME_RECURSO;
+
     public final StringPath nome = createString("nome");
 
     public final TSystem sistema;
@@ -51,6 +53,7 @@ public class TResource extends EntityPathBase<Resource> {
     public TResource(Class<? extends Resource> type, PathMetadata<?> metadata, PathInits inits) {
         super(type, metadata, inits);
         this.sistema = inits.isInitialized("sistema") ? new TSystem(forProperty("sistema")) : null;
+        this.idx_UK_SEGURANCARECURSO_NOME_RECURSO = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCARECURSO_NOME_RECURSO");
     }
 
 }

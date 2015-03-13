@@ -37,6 +37,8 @@ public class TGroup extends EntityPathBase<Group> {
     //inherited
     public final NumberPath<Long> id = _super.id;
 
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_PK_SEGURANCA;
+
     public final ListPath<User, TUser> membros = this.<User, TUser>createList("membros", User.class, TUser.class, PathInits.DIRECT2);
 
     //inherited
@@ -47,14 +49,17 @@ public class TGroup extends EntityPathBase<Group> {
 
     public TGroup(String variable) {
         super(Group.class, forVariable(variable));
+        this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
     }
 
     public TGroup(Path<? extends Group> path) {
         super(path.getType(), path.getMetadata());
+        this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
     }
 
     public TGroup(PathMetadata<?> metadata) {
         super(Group.class, metadata);
+        this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
     }
 
 }

@@ -30,20 +30,25 @@ public class TSecurity extends EntityPathBase<Security> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_PK_SEGURANCA;
+
     public final StringPath nome = createString("nome");
 
     public final StringPath tipoSeguranca = createString("tipoSeguranca");
 
     public TSecurity(String variable) {
         super(Security.class, forVariable(variable));
+        this.idx_PK_SEGURANCA = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"PK_SEGURANCA");
     }
 
     public TSecurity(Path<? extends Security> path) {
         super(path.getType(), path.getMetadata());
+        this.idx_PK_SEGURANCA = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"PK_SEGURANCA");
     }
 
     public TSecurity(PathMetadata<?> metadata) {
         super(Security.class, metadata);
+        this.idx_PK_SEGURANCA = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"PK_SEGURANCA");
     }
 
 }

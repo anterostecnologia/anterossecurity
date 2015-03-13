@@ -25,6 +25,8 @@ import br.com.anteros.persistence.metadata.annotation.Entity;
 import br.com.anteros.persistence.metadata.annotation.Fetch;
 import br.com.anteros.persistence.metadata.annotation.GeneratedValue;
 import br.com.anteros.persistence.metadata.annotation.Id;
+import br.com.anteros.persistence.metadata.annotation.Index;
+import br.com.anteros.persistence.metadata.annotation.Indexes;
 import br.com.anteros.persistence.metadata.annotation.Inheritance;
 import br.com.anteros.persistence.metadata.annotation.JoinColumn;
 import br.com.anteros.persistence.metadata.annotation.JoinTable;
@@ -48,6 +50,10 @@ import br.com.anteros.persistence.metadata.annotation.type.InheritanceType;
 @Table(name = "SEGURANCA")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "TP_SEGURANCA", length = 40)
+@Indexes({ @Index(name = "PK_SEGURANCA", columnNames = {"ID_SEGURANCA"}),
+	@Index(name = "IX_SEGURANCA_ID_HORARIO", columnNames = {"ID_HORARIO"}),
+	@Index(name = "SEGURANCA_PERFIL", columnNames = {"ID_PERFIL"}),
+	@Index(name = "UK_SEGURANCA_LOGIN", columnNames = {"LOGIN"})})
 public abstract class Security implements Serializable {
 
 	
