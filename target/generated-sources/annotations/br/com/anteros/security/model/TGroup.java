@@ -37,7 +37,13 @@ public class TGroup extends EntityPathBase<Group> {
     //inherited
     public final NumberPath<Long> id = _super.id;
 
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_IX_SEGURANCA_ID_HORARIO;
+
     public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_PK_SEGURANCA;
+
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_SEGURANCA_PERFIL;
+
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_UK_SEGURANCA_LOGIN;
 
     public final ListPath<User, TUser> membros = this.<User, TUser>createList("membros", User.class, TUser.class, PathInits.DIRECT2);
 
@@ -49,17 +55,26 @@ public class TGroup extends EntityPathBase<Group> {
 
     public TGroup(String variable) {
         super(Group.class, forVariable(variable));
+        this.idx_IX_SEGURANCA_ID_HORARIO = _super.idx_IX_SEGURANCA_ID_HORARIO;
         this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
+        this.idx_SEGURANCA_PERFIL = _super.idx_SEGURANCA_PERFIL;
+        this.idx_UK_SEGURANCA_LOGIN = _super.idx_UK_SEGURANCA_LOGIN;
     }
 
     public TGroup(Path<? extends Group> path) {
         super(path.getType(), path.getMetadata());
+        this.idx_IX_SEGURANCA_ID_HORARIO = _super.idx_IX_SEGURANCA_ID_HORARIO;
         this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
+        this.idx_SEGURANCA_PERFIL = _super.idx_SEGURANCA_PERFIL;
+        this.idx_UK_SEGURANCA_LOGIN = _super.idx_UK_SEGURANCA_LOGIN;
     }
 
     public TGroup(PathMetadata<?> metadata) {
         super(Group.class, metadata);
+        this.idx_IX_SEGURANCA_ID_HORARIO = _super.idx_IX_SEGURANCA_ID_HORARIO;
         this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
+        this.idx_SEGURANCA_PERFIL = _super.idx_SEGURANCA_PERFIL;
+        this.idx_UK_SEGURANCA_LOGIN = _super.idx_UK_SEGURANCA_LOGIN;
     }
 
 }

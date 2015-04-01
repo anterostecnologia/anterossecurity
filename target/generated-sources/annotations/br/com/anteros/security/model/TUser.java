@@ -99,10 +99,10 @@ public class TUser extends EntityPathBase<User> {
         super(type, metadata, inits);
         this.horarioAcesso = inits.isInitialized("horarioAcesso") ? new TAccessTime(forProperty("horarioAcesso")) : null;
         this.perfil = inits.isInitialized("perfil") ? new TProfile(forProperty("perfil")) : null;
-        this.idx_IX_SEGURANCA_ID_HORARIO = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"IX_SEGURANCA_ID_HORARIO");
+        this.idx_IX_SEGURANCA_ID_HORARIO = _super.idx_IX_SEGURANCA_ID_HORARIO;
         this.idx_PK_SEGURANCA = _super.idx_PK_SEGURANCA;
-        this.idx_SEGURANCA_PERFIL = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"SEGURANCA_PERFIL");
-        this.idx_UK_SEGURANCA_LOGIN = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCA_LOGIN");
+        this.idx_SEGURANCA_PERFIL = _super.idx_SEGURANCA_PERFIL;
+        this.idx_UK_SEGURANCA_LOGIN = _super.idx_UK_SEGURANCA_LOGIN;
     }
 
 }
