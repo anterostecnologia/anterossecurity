@@ -14,20 +14,20 @@
 		<dependency>
 			<groupId>br.com.anteros</groupId>
 			<artifactId>Anteros-Persistence-Core</artifactId>
-			<version>0.0.10-SNAPSHOT</version>
+			<version>LATEST</version>
 		</dependency>
 
 		<dependency>
 			<groupId>br.com.anteros</groupId>
 			<artifactId>Anteros-Persistence-Apt</artifactId>
-			<version>0.0.5-SNAPSHOT</version>
+			<version>LATEST</version>
 		</dependency>
 		
 		
 		<dependency>
 			<groupId>br.com.anteros</groupId>
 			<artifactId>Anteros-Persistence</artifactId>
-			<version>0.0.10-SNAPSHOT</version>
+			<version>LATEST</version>
 		</dependency>
 
 	</dependencies>
