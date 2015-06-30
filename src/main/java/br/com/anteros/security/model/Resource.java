@@ -46,7 +46,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
 @Entity
 @Table(name = "SEGURANCARECURSO")
 @Indexes(value = {
-		@Index(name = "UK_SEGURANCARECURSO_NOME_RECURSO", columnNames = { "ID_SISTEMA, NOME_RECURSO"}, unique = true) })
+		@Index(name = "UK_SEGURANCARECURSO_NOME_RECUR", columnNames = { "ID_SISTEMA, NOME_RECURSO"}, unique = true) })
 public class Resource implements Serializable {
 
 	/*
