@@ -24,7 +24,7 @@ public class TSystem extends EntityPathBase<System> {
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_UK_SEGURANCASISTEMA_NOME_SISTEMA;
+    public final br.com.anteros.persistence.dsl.osql.types.IndexHint idx_UK_SEGURANCASISTEMA_NOME_SIST;
 
     public final StringPath nome = createString("nome");
 
@@ -32,17 +32,17 @@ public class TSystem extends EntityPathBase<System> {
 
     public TSystem(String variable) {
         super(System.class, forVariable(variable));
-        this.idx_UK_SEGURANCASISTEMA_NOME_SISTEMA = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCASISTEMA_NOME_SISTEMA");
+        this.idx_UK_SEGURANCASISTEMA_NOME_SIST = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCASISTEMA_NOME_SIST");
     }
 
     public TSystem(Path<? extends System> path) {
         super(path.getType(), path.getMetadata());
-        this.idx_UK_SEGURANCASISTEMA_NOME_SISTEMA = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCASISTEMA_NOME_SISTEMA");
+        this.idx_UK_SEGURANCASISTEMA_NOME_SIST = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCASISTEMA_NOME_SIST");
     }
 
     public TSystem(PathMetadata<?> metadata) {
         super(System.class, metadata);
-        this.idx_UK_SEGURANCASISTEMA_NOME_SISTEMA = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCASISTEMA_NOME_SISTEMA");
+        this.idx_UK_SEGURANCASISTEMA_NOME_SIST = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCASISTEMA_NOME_SIST");
     }
 
 }
