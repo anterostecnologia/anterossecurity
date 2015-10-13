@@ -66,5 +66,8 @@ public class TSecurity extends EntityPathBase<Security> {
         this.idx_UK_SEGURANCA_LOGIN = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCA_LOGIN");
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{acoes,descricao,email,horarioAcessoSistema,id,nome,tipoSeguranca};
+    }
 }
 

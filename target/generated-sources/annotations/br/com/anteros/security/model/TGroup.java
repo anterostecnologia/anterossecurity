@@ -77,5 +77,8 @@ public class TGroup extends EntityPathBase<Group> {
         this.idx_UK_SEGURANCA_LOGIN = _super.idx_UK_SEGURANCA_LOGIN;
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{acoes,descricao,email,horarioAcessoSistema,id,membros,nome,tipoSeguranca};
+    }
 }
 

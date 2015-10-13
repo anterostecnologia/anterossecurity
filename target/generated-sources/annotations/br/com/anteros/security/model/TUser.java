@@ -105,5 +105,8 @@ public class TUser extends EntityPathBase<User> {
         this.idx_UK_SEGURANCA_LOGIN = _super.idx_UK_SEGURANCA_LOGIN;
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{acoes,alterarSenhaProximoLogin,boAdministrador,boHorarioLivre,contaBloqueada,contaDesativada,descricao,email,grupos,horarioAcesso,horarioAcessoSistema,id,login,nome,perfil,permiteAlterarSenha,permiteMultiplosLogins,senha,senhaNuncaExpira,tipoSeguranca};
+    }
 }
 

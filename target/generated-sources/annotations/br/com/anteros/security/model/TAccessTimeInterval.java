@@ -53,5 +53,8 @@ public class TAccessTimeInterval extends EntityPathBase<AccessTimeInterval> {
         this.horarioAcesso = inits.isInitialized("horarioAcesso") ? new TAccessTime(forProperty("horarioAcesso")) : null;
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{diaDaSemana,horaFinal,horaInicial,horarioAcesso,id};
+    }
 }
 

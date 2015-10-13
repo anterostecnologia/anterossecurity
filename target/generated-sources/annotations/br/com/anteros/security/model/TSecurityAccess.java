@@ -56,5 +56,8 @@ public class TSecurityAccess extends EntityPathBase<SecurityAccess> {
         this.terminal = inits.isInitialized("terminal") ? new TTerminal(forProperty("terminal")) : null;
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{horarioAcesso,id,seguranca,sistema,terminal};
+    }
 }
 

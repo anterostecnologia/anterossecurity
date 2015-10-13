@@ -56,5 +56,8 @@ public class TResource extends EntityPathBase<Resource> {
         this.idx_UK_SEGURANCARECURSO_NOME_RECUR = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCARECURSO_NOME_RECUR");
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{acoes,descricao,id,nome,sistema};
+    }
 }
 

@@ -45,5 +45,8 @@ public class TSystem extends EntityPathBase<System> {
         this.idx_UK_SEGURANCASISTEMA_NOME_SIST = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCASISTEMA_NOME_SIST");
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{descricao,id,nome,recursos};
+    }
 }
 

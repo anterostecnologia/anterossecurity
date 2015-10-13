@@ -38,5 +38,8 @@ public class TAccessTime extends EntityPathBase<AccessTime> {
         super(AccessTime.class, metadata);
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{descricao,id,intervalos};
+    }
 }
 

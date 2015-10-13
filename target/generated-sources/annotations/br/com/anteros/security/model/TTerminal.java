@@ -39,5 +39,8 @@ public class TTerminal extends EntityPathBase<Terminal> {
         super(Terminal.class, metadata);
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{descricao,enderecoIP,id,nome};
+    }
 }
 

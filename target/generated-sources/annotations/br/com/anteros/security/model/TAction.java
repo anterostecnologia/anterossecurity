@@ -57,5 +57,8 @@ public class TAction extends EntityPathBase<Action> {
         this.recurso = inits.isInitialized("recurso") ? new TResource(forProperty("recurso"), inits.get("recurso")) : null;
     }
 
+    public Path<?>[] all() {
+    	return new Path[]{ativa,categoria,descricao,id,nome,recurso,versao};
+    }
 }
 
