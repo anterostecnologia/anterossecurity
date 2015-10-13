@@ -55,7 +55,7 @@ public class Resource implements Serializable {
 	@Id
 	@Column(name = "ID_RECURSO", length = 8)
 	@GeneratedValue(strategy = GeneratedType.AUTO)
-	@SequenceGenerator(sequenceName = "SEQ_RECURSO", initialValue = 1)
+	@SequenceGenerator(sequenceName = "SEQ_SEGURANCARECURSO", initialValue = 1)
 	private Long id;
 
 	/*
