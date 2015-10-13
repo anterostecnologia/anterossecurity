@@ -143,4 +143,65 @@ public class Action implements Serializable {
 		this.versao = versao;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((ativa == null) ? 0 : ativa.hashCode());
+		result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
+		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((recurso == null) ? 0 : recurso.hashCode());
+		result = prime * result + ((versao == null) ? 0 : versao.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Action other = (Action) obj;
+		if (ativa == null) {
+			if (other.ativa != null)
+				return false;
+		} else if (!ativa.equals(other.ativa))
+			return false;
+		if (categoria == null) {
+			if (other.categoria != null)
+				return false;
+		} else if (!categoria.equals(other.categoria))
+			return false;
+		if (descricao == null) {
+			if (other.descricao != null)
+				return false;
+		} else if (!descricao.equals(other.descricao))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (recurso == null) {
+			if (other.recurso != null)
+				return false;
+		} else if (!recurso.equals(other.recurso))
+			return false;
+		if (versao == null) {
+			if (other.versao != null)
+				return false;
+		} else if (!versao.equals(other.versao))
+			return false;
+		return true;
+	}
+
 }
