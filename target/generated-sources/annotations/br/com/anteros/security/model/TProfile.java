@@ -75,7 +75,7 @@ public class TProfile extends EntityPathBase<Profile> {
     }
 
     public Path<?>[] all() {
-    	return new Path[]{acoes,descricao,email,horarioAcessoSistema,id,nome,tipoSeguranca};
+    	return new Path[]{descricao,email,id,nome,tipoSeguranca};
     }
 }
 

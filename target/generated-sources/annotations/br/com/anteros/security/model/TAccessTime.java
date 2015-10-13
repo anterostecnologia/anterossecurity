@@ -39,7 +39,7 @@ public class TAccessTime extends EntityPathBase<AccessTime> {
     }
 
     public Path<?>[] all() {
-    	return new Path[]{descricao,id,intervalos};
+    	return new Path[]{descricao,id};
     }
 }
 

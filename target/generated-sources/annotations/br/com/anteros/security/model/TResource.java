@@ -57,7 +57,7 @@ public class TResource extends EntityPathBase<Resource> {
     }
 
     public Path<?>[] all() {
-    	return new Path[]{acoes,descricao,id,nome,sistema};
+    	return new Path[]{descricao,id,nome,sistema};
     }
 }
 

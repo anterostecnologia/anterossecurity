@@ -106,7 +106,7 @@ public class TUser extends EntityPathBase<User> {
     }
 
     public Path<?>[] all() {
-    	return new Path[]{acoes,alterarSenhaProximoLogin,boAdministrador,boHorarioLivre,contaBloqueada,contaDesativada,descricao,email,grupos,horarioAcesso,horarioAcessoSistema,id,login,nome,perfil,permiteAlterarSenha,permiteMultiplosLogins,senha,senhaNuncaExpira,tipoSeguranca};
+    	return new Path[]{alterarSenhaProximoLogin,boAdministrador,boHorarioLivre,contaBloqueada,contaDesativada,descricao,email,horarioAcesso,id,login,nome,perfil,permiteAlterarSenha,permiteMultiplosLogins,senha,senhaNuncaExpira,tipoSeguranca};
     }
 }
 

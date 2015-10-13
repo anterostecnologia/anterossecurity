@@ -46,7 +46,7 @@ public class TSystem extends EntityPathBase<System> {
     }
 
     public Path<?>[] all() {
-    	return new Path[]{descricao,id,nome,recursos};
+    	return new Path[]{descricao,id,nome};
     }
 }
 

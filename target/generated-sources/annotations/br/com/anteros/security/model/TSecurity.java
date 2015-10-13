@@ -67,7 +67,7 @@ public class TSecurity extends EntityPathBase<Security> {
     }
 
     public Path<?>[] all() {
-    	return new Path[]{acoes,descricao,email,horarioAcessoSistema,id,nome,tipoSeguranca};
+    	return new Path[]{descricao,email,id,nome,tipoSeguranca};
     }
 }
 

@@ -78,7 +78,7 @@ public class TGroup extends EntityPathBase<Group> {
     }
 
     public Path<?>[] all() {
-    	return new Path[]{acoes,descricao,email,horarioAcessoSistema,id,membros,nome,tipoSeguranca};
+    	return new Path[]{descricao,email,id,nome,tipoSeguranca};
     }
 }
 
