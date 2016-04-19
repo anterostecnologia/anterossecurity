@@ -59,12 +59,6 @@
 			<artifactId>Anteros-Persistence-Core</artifactId>
 			<version>[1.0.0,)</version>
 		</dependency>
-
-		<dependency>
-			<groupId>br.com.anteros</groupId>
-			<artifactId>Anteros-Persistence-Apt</artifactId>
-			<version>[1.0.0,)</version>
-		</dependency>
 	</dependencies>
 
 	<profiles>
