@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.anteros</groupId>
 	<artifactId>Anteros-Security</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 
 	<properties>
 		<java.versao>1.6</java.versao>
@@ -59,6 +59,11 @@
 			<artifactId>Anteros-Persistence-Core</artifactId>
 			<version>[1.0.0,)</version>
 		</dependency>
+		<dependency>
+			<groupId>br.com.anteros</groupId>
+			<artifactId>Anteros-Persistence-Apt</artifactId>
+			<version>[1.0.0,)</version>
+		</dependency>
 	</dependencies>
 
 	<profiles>
@@ -66,16 +71,6 @@
 			<id>maven-central</id>
 			<build>
 				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<version>3.1</version>
-						<configuration>
-							<target>${java.versao}</target>
-							<source>${java.versao}</source>
-							<forceJavacCompilerUse>true</forceJavacCompilerUse>
-						</configuration>
-					</plugin>
 					<plugin>
 						<groupId>org.sonatype.plugins</groupId>
 						<artifactId>nexus-staging-maven-plugin</artifactId>
@@ -115,13 +110,32 @@
 				<pluginManagement>
 					<plugins>
 						<plugin>
+							<groupId>org.bsc.maven</groupId>
+							<artifactId>maven-processor-plugin</artifactId>
+							<version>2.2.4</version>
+							<executions>
+								<execution>
+									<id>process</id>
+									<goals>
+										<goal>process</goal>
+									</goals>
+									<phase>generate-sources</phase>
+									<configuration>
+										<outputDirectory>${project.build.directory}/generated-sources/annotations</outputDirectory>
+										<processors>
+											<processor>br.com.anteros.persistence.apt.AnterosPersistenceAnnotationProcessor</processor>
+										</processors>
+									</configuration>
+								</execution>
+							</executions>
+						</plugin>
+						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-compiler-plugin</artifactId>
 							<version>3.1</version>
 							<configuration>
 								<target>${java.versao}</target>
 								<source>${java.versao}</source>
-								<forceJavacCompilerUse>true</forceJavacCompilerUse>
 							</configuration>
 						</plugin>
 						<plugin>
@@ -182,6 +196,26 @@
 			<build>
 				<pluginManagement>
 					<plugins>
+						<plugin>
+							<groupId>org.bsc.maven</groupId>
+							<artifactId>maven-processor-plugin</artifactId>
+							<version>2.2.4</version>
+							<executions>
+								<execution>
+									<id>process</id>
+									<goals>
+										<goal>process</goal>
+									</goals>
+									<phase>generate-sources</phase>
+									<configuration>
+										<outputDirectory>${project.build.directory}/generated-sources/annotations</outputDirectory>
+										<processors>
+											<processor>br.com.anteros.persistence.apt.AnterosPersistenceAnnotationProcessor</processor>
+										</processors>
+									</configuration>
+								</execution>
+							</executions>
+						</plugin>
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-compiler-plugin</artifactId>
