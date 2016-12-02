@@ -30,6 +30,8 @@ public class TSystem extends EntityPathBase<System> {
 
     public final SetPath<Resource, TResource> recursos = this.<Resource, TResource>createSet("recursos", Resource.class, TResource.class, PathInits.DIRECT2);
 
+    public final StringPath versaoMinima = createString("versaoMinima");
+
     public TSystem(String variable) {
         super(System.class, forVariable(variable));
         this.idx_UK_SEGURANCASISTEMA_NOME_SIST = new br.com.anteros.persistence.dsl.osql.types.IndexHint(this,"UK_SEGURANCASISTEMA_NOME_SIST");
@@ -46,7 +48,7 @@ public class TSystem extends EntityPathBase<System> {
     }
 
     public Path<?>[] all() {
-    	return new Path[]{descricao,id,nome};
+    	return new Path[]{descricao,id,nome,versaoMinima};
     }
 }
 

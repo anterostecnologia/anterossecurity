@@ -34,14 +34,15 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
 /**
  * Sistema
  * 
- * Classe que representa um Sistema que necessite de controle de acesso de Recursos/Ações.
+ * Classe que representa um Sistema que necessite de controle de acesso de
+ * Recursos/Ações.
  * 
  * @author Edson Martins edsonmartins2005@gmail.com
  */
 @Entity
 @Table(name = "SEGURANCASISTEMA")
 @Indexes(value = {
-		@Index(name = "UK_SEGURANCASISTEMA_NOME_SIST", columnNames = { "NOME_SISTEMA"}, unique = true) })
+		@Index(name = "UK_SEGURANCASISTEMA_NOME_SIST", columnNames = { "NOME_SISTEMA" }, unique = true) })
 public class System implements Serializable {
 
 	/*
@@ -64,6 +65,12 @@ public class System implements Serializable {
 	 */
 	@Column(name = "DS_SISTEMA", length = 40, required = true)
 	private String descricao;
+
+	/*
+	 * Versão mínima do Sistema
+	 */
+	@Column(name = "VERSAO_MINIMA", length = 20, required = true)
+	private String versaoMinima;
 
 	/*
 	 * Lista de Recursos que pertencem a um Sistema.
@@ -95,6 +102,14 @@ public class System implements Serializable {
 		this.descricao = descricao;
 	}
 
+	public String getVersaoMinima() {
+		return versaoMinima;
+	}
+
+	public void setVersaoMinima(String versaoMinima) {
+		this.versaoMinima = versaoMinima;
+	}
+
 	public Set<Resource> getRecursos() {
 		return recursos;
 	}
@@ -110,6 +125,7 @@ public class System implements Serializable {
 		result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((versaoMinima == null) ? 0 : versaoMinima.hashCode());
 		return result;
 	}
 
@@ -137,9 +153,12 @@ public class System implements Serializable {
 				return false;
 		} else if (!nome.equals(other.nome))
 			return false;
+		if (versaoMinima == null) {
+			if (other.versaoMinima != null)
+				return false;
+		} else if (!versaoMinima.equals(other.versaoMinima))
+			return false;
 		return true;
 	}
-
-	
 
 }
