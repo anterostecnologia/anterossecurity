@@ -15,7 +15,9 @@
  *******************************************************************************/
 package br.com.anteros.security.model;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import br.com.anteros.persistence.metadata.annotation.BooleanValue;
 import br.com.anteros.persistence.metadata.annotation.Column;
@@ -23,14 +25,15 @@ import br.com.anteros.persistence.metadata.annotation.DiscriminatorValue;
 import br.com.anteros.persistence.metadata.annotation.Entity;
 import br.com.anteros.persistence.metadata.annotation.Fetch;
 import br.com.anteros.persistence.metadata.annotation.ForeignKey;
-import br.com.anteros.persistence.metadata.annotation.Index;
-import br.com.anteros.persistence.metadata.annotation.Indexes;
 import br.com.anteros.persistence.metadata.annotation.JoinColumn;
 import br.com.anteros.persistence.metadata.annotation.JoinTable;
 import br.com.anteros.persistence.metadata.annotation.Transient;
 import br.com.anteros.persistence.metadata.annotation.type.BooleanType;
 import br.com.anteros.persistence.metadata.annotation.type.FetchMode;
 import br.com.anteros.persistence.metadata.annotation.type.FetchType;
+import br.com.anteros.security.store.domain.IAction;
+import br.com.anteros.security.store.domain.IProfile;
+import br.com.anteros.security.store.domain.IUser;
 
 /**
  * Usuario
@@ -43,7 +46,7 @@ import br.com.anteros.persistence.metadata.annotation.type.FetchType;
 
 @Entity
 @DiscriminatorValue(value = "USUARIO")
-public class User extends Security {
+public class User extends Security implements IUser {
 
 	/*
 	 * Login do usuário
@@ -271,6 +274,53 @@ public class User extends Security {
 		return true;
 	}
 
+	@Override
+	public String getUserId() {
+		return this.getId()+"";
+	}
 
+	@Override
+	public String getPassword() {
+		return this.getSenha();
+	}
+
+	@Override
+	public String getAvatar() {
+		return this.getAvatar();
+	}
+
+	@Override
+	public boolean isPasswordNeverExpire() {
+		return this.getSenhaNuncaExpira();
+	}
+
+	@Override
+	public boolean isInactiveAccount() {
+		return this.getContaDesativada();
+	}
+
+	@Override
+	public boolean isBlockedAccount() {
+		return this.getContaBloqueada();
+	}
+
+	@Override
+	public boolean isAdministrator() {
+		return this.getBoAdministrador();
+	}
+
+	@Override
+	public Set<IAction> getActionList() {
+		Set<IAction> result = new HashSet<IAction>();
+		for (Action action : this.getAcoes()) {
+			result.add((IAction) action);
+		}
+		return result;
+	}
+
+	@Override
+	public IProfile getUserProfile() {
+		return (IProfile) this.getPerfil();
+	}
 
 }

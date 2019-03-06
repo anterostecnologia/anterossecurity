@@ -28,6 +28,8 @@ import br.com.anteros.persistence.metadata.annotation.Table;
 import br.com.anteros.persistence.metadata.annotation.type.BooleanType;
 import br.com.anteros.persistence.metadata.annotation.type.FetchType;
 import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
+import br.com.anteros.security.store.domain.IAction;
+import br.com.anteros.security.store.domain.IResource;
 
 /**
  * Ação
@@ -38,7 +40,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
  */
 @Entity
 @Table(name = "SEGURANCAACAO")
-public class Action implements Serializable {
+public class Action implements Serializable, IAction {
 
 	/*
 	 * Identificador da Ação
@@ -203,5 +205,66 @@ public class Action implements Serializable {
 			return false;
 		return true;
 	}
+
+
+	public Action() {
+
+	}
+
+	public Action(String actionName, String description, String category, IResource resource, String version) {
+		this.setNome(actionName);
+		this.setDescricao(description);
+		this.setCategoria(category);
+		this.setRecurso((br.com.anteros.security.model.Resource) resource);
+		this.setVersao(version);
+	}		
+
+	@Override
+	public String getActionId() {
+		return this.getId()+"";
+	}
+
+	@Override
+	public IResource getResource() {
+		return (IResource) this.getRecurso();
+	}
+	
+	@Override
+	public String getActionName() {
+		return getNome();
+	}
+
+	@Override
+	public boolean isActive() {
+		return getAtiva();
+	}
+
+	@Override
+	public void setActive(boolean value) {
+		this.setAtiva(value); 
+	}
+	
+
+	public static Action of(String actionName, String description, String category, IResource resource,
+			String version) {
+		return new Action(actionName,description,category,resource,version);
+	}
+
+	@Override
+	public String getCategory() {
+		return this.getCategoria();
+	}
+
+	@Override
+	public void setCategory(String category) {
+		this.setCategoria(category);
+	}
+
+	@Override
+	public String getVersion() {
+		return this.getVersao();
+	}
+
+
 
 }

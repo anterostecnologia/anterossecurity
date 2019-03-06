@@ -37,7 +37,6 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
 @Entity
 @Table(name = "SEGURANCAHORARIOINTERVALO")
 public class AccessTimeInterval implements Serializable {
-
 	
 	/*
 	 * Identificação

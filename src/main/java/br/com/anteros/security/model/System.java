@@ -30,6 +30,7 @@ import br.com.anteros.persistence.metadata.annotation.Table;
 import br.com.anteros.persistence.metadata.annotation.type.FetchMode;
 import br.com.anteros.persistence.metadata.annotation.type.FetchType;
 import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
+import br.com.anteros.security.store.domain.ISystem;
 
 /**
  * Sistema
@@ -43,7 +44,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
 @Table(name = "SEGURANCASISTEMA")
 @Indexes(value = {
 		@Index(name = "UK_SEGURANCASISTEMA_NOME_SIST", columnNames = { "NOME_SISTEMA" }, unique = true) })
-public class System implements Serializable {
+public class System implements Serializable, ISystem {
 
 	/*
 	 * Identificação do Sistema
@@ -77,6 +78,16 @@ public class System implements Serializable {
 	 */
 	@Fetch(type = FetchType.LAZY, mode = FetchMode.ONE_TO_MANY, mappedBy = "sistema")
 	private Set<Resource> recursos;
+	
+	public System() {
+		
+	}
+	
+	public System(String nome, String descricao) {
+		super();
+		this.nome = nome;
+		this.descricao = descricao;
+	}
 
 	public Long getId() {
 		return id;
@@ -160,5 +171,20 @@ public class System implements Serializable {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String getSystemId() {
+		return this.getId()+"";
+	}
+
+	@Override
+	public String getSystemName() {
+		return this.getNome();
+	}
+
+	public static System of(String systemName, String description) {
+		return new System(systemName, description);
+	}
+
 
 }

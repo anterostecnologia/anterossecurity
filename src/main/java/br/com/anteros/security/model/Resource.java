@@ -16,6 +16,7 @@
 package br.com.anteros.security.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.anteros.persistence.metadata.annotation.Cascade;
@@ -33,6 +34,9 @@ import br.com.anteros.persistence.metadata.annotation.type.CascadeType;
 import br.com.anteros.persistence.metadata.annotation.type.FetchMode;
 import br.com.anteros.persistence.metadata.annotation.type.FetchType;
 import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
+import br.com.anteros.security.store.domain.IAction;
+import br.com.anteros.security.store.domain.IResource;
+import br.com.anteros.security.store.domain.ISystem;
 
 /**
  * Recurso
@@ -47,7 +51,7 @@ import br.com.anteros.persistence.metadata.annotation.type.GeneratedType;
 @Table(name = "SEGURANCARECURSO")
 @Indexes(value = {
 		@Index(name = "UK_SEGURANCARECURSO_NOME_RECUR", columnNames = { "ID_SISTEMA, NOME_RECURSO"}, unique = true) })
-public class Resource implements Serializable {
+public class Resource implements Serializable, IResource {
 
 	/*
 	 * Identificação do Recurso
@@ -165,6 +169,52 @@ public class Resource implements Serializable {
 		} else if (!sistema.equals(other.sistema))
 			return false;
 		return true;
+	}	
+	
+	public Resource() {
+		
+	}
+	
+	public Resource(String resourceName, String description, System system) {
+		this.setNome(resourceName);
+		this.setDescricao(description);
+		this.setSistema(system);
+	}
+
+	@Override
+	public String getResourceId() {
+		return this.getId()+"";
+	}
+
+	@Override
+	public ISystem getSystem() {
+		return (ISystem) this.getSistema();
+	}
+
+	@Override
+	public String getResourceName() {
+		return this.getNome();
+	}
+
+	@Override
+	public IResource addAction(IAction action) {
+		this.getAcoes().add((Action) action);
+		return this;
+	}
+
+	@Override
+	public List<IAction> getActionList() {
+		List<IAction> result = new ArrayList<IAction>();
+		if (this.getAcoes() != null) {
+			for (Action action : this.getAcoes()) {
+				result.add((IAction) action);
+			}
+		}
+		return result;
+	}
+
+	public static Resource of(String resourceName, String description, System system) {
+		return new Resource(resourceName, description, system);
 	}
 
 }
