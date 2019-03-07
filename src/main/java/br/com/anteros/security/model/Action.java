@@ -236,7 +236,8 @@ public class Action implements Serializable, IAction {
 
 	@Override
 	public boolean isActive() {
-		return getAtiva();
+		Boolean ativo = getAtiva();
+		return (ativo == null ? false : ativo);		
 	}
 
 	@Override
