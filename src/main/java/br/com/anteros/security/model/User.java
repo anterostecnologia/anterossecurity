@@ -27,6 +27,7 @@ import br.com.anteros.persistence.metadata.annotation.Fetch;
 import br.com.anteros.persistence.metadata.annotation.ForeignKey;
 import br.com.anteros.persistence.metadata.annotation.JoinColumn;
 import br.com.anteros.persistence.metadata.annotation.JoinTable;
+import br.com.anteros.persistence.metadata.annotation.Lob;
 import br.com.anteros.persistence.metadata.annotation.Transient;
 import br.com.anteros.persistence.metadata.annotation.type.BooleanType;
 import br.com.anteros.persistence.metadata.annotation.type.FetchMode;
@@ -131,6 +132,10 @@ public class User extends Security implements IUser {
 	@ForeignKey(type = FetchType.EAGER)
 	@Column(name = "ID_PERFIL", inversedColumn = "ID_SEGURANCA")
 	private Profile perfil;
+	
+	@Lob
+	@Column(name="AVATAR")
+	private String avatar;
 
 	public Boolean getAlterarSenhaProximoLogin() {
 		return alterarSenhaProximoLogin;
@@ -286,7 +291,7 @@ public class User extends Security implements IUser {
 
 	@Override
 	public String getAvatar() {
-		return this.getAvatar();
+		return avatar;
 	}
 
 	@Override
@@ -321,6 +326,10 @@ public class User extends Security implements IUser {
 	@Override
 	public IProfile getUserProfile() {
 		return (IProfile) this.getPerfil();
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 
 }
