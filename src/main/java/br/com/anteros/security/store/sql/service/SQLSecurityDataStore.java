@@ -21,7 +21,6 @@ import org.springframework.security.oauth2.provider.token.AuthenticationKeyGener
 import org.springframework.stereotype.Service;
 
 import br.com.anteros.core.utils.SerializationUtils;
-import br.com.anteros.persistence.session.SQLSession;
 import br.com.anteros.security.model.AccessToken;
 import br.com.anteros.security.model.Approval;
 import br.com.anteros.security.model.RefreshToken;
@@ -428,14 +427,14 @@ public class SQLSecurityDataStore implements SecurityDataStore {
 	@Override
 	public void initializeCurrentSession() throws Exception {
 		
-		SQLSession session = securityRepositorySql.getSQLSessionFactory().openSession();
-		securityRepositorySql.setSession(session);
-		systemRepositorySql.setSession(session);
-		resourceRepositorySql.setSession(session);
-		actionRepositorySql.setSession(session);
-		approvalRepositorySql.setSession(session);
-		accessTokenRepositorySql.setSession(session);
-		refreshTokenRepositorySql.setSession(session);
+//		SQLSession session = securityRepositorySql.getSQLSessionFactory().openSession();
+//		securityRepositorySql.setSession(session);
+//		systemRepositorySql.setSession(session);
+//		resourceRepositorySql.setSession(session);
+//		actionRepositorySql.setSession(session);
+//		approvalRepositorySql.setSession(session);
+//		accessTokenRepositorySql.setSession(session);
+//		refreshTokenRepositorySql.setSession(session);
 	}
 
 
