@@ -104,7 +104,7 @@ public class SQLSecurityDataStore implements SecurityDataStore {
 	}
 
 	public IResource refreshResource(IResource resource) throws Exception {
-		resourceRepositorySql.refresh((Resource) resource);
+		resourceRepositorySql.refresh((Resource) resource, null);
 		return resource;
 	}
 
