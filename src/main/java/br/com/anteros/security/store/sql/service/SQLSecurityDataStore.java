@@ -437,5 +437,17 @@ public class SQLSecurityDataStore implements SecurityDataStore {
 //		refreshTokenRepositorySql.setSession(session);
 	}
 
+	@Override
+	public void clearCurrentSession() throws Exception {
+		securityRepositorySql.getSession().clear();
+		systemRepositorySql.getSession().clear();
+		resourceRepositorySql.getSession().clear();
+		actionRepositorySql.getSession().clear();
+		approvalRepositorySql.getSession().clear();
+		accessTokenRepositorySql.getSession().clear();
+		refreshTokenRepositorySql.getSession().clear();
+		
+	}
+
 
 }
