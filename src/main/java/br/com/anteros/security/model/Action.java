@@ -235,13 +235,13 @@ public class Action implements Serializable, IAction {
 	}
 
 	@Override
-	public boolean isActive() {
+	public boolean isActionActive() {
 		Boolean ativo = getAtiva();
 		return (ativo == null ? false : ativo);		
 	}
 
 	@Override
-	public void setActive(boolean value) {
+	public void setActiveAction(boolean value) {
 		this.setAtiva(value); 
 	}
 	
