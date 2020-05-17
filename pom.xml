@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.anteros</groupId>
 	<artifactId>Anteros-Security</artifactId>
-	<version>2.0.5</version>
+	<version>2.0.6</version>
 
 	<properties>
 		<java.versao>1.8</java.versao>
@@ -70,6 +70,25 @@
 			<version>[1.0.0,)</version>
 		</dependency>
 	</dependencies>
+	
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>bintray-puravida-software-repo</id>
+			<name>bintray</name>
+			<url>https://dl.bintray.com/puravida-software/repo</url>
+		</repository>
+		<repository>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<id>spring</id>
+			<name>extensions</name>
+			<url>https://repo.spring.io/release</url>
+		</repository>
+	</repositories>
 
 	<profiles>
 		<profile>
