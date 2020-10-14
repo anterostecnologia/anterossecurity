@@ -135,7 +135,7 @@ public class User extends Security implements IUser {
 	
 	@Lob
 	@Column(name="AVATAR")
-	private String avatar;
+	private byte[] avatar;
 
 	public Boolean getAlterarSenhaProximoLogin() {
 		return alterarSenhaProximoLogin;
@@ -290,7 +290,7 @@ public class User extends Security implements IUser {
 	}
 
 	@Override
-	public String getAvatar() {
+	public byte[] getAvatar() {
 		return avatar;
 	}
 
@@ -328,7 +328,7 @@ public class User extends Security implements IUser {
 		return (IProfile) this.getPerfil();
 	}
 
-	public void setAvatar(String avatar) {
+	public void setAvatar(byte[] avatar) {
 		this.avatar = avatar;
 	}
 
