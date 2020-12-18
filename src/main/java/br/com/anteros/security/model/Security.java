@@ -18,6 +18,8 @@ package br.com.anteros.security.model;
 import java.io.Serializable;
 import java.util.Set;
 
+import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
+
 import br.com.anteros.persistence.metadata.annotation.Cascade;
 import br.com.anteros.persistence.metadata.annotation.Column;
 import br.com.anteros.persistence.metadata.annotation.DiscriminatorColumn;
@@ -94,8 +96,20 @@ public abstract class Security implements Serializable {
 	/*
 	 * Email do usuário
 	 */
+	@Required
 	@Column(name = "EMAIL", length = 250)
 	private String email;
+	
+	@Column(name="UUID", length = 40)
+	private String uuid;
+
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 
 	public Long getId() {
 		return id;
